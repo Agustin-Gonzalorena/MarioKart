@@ -21,6 +21,7 @@ const WinnerCard = ({ restartGame, winner }) => {
   return (
     <article className="cardWinner">
       <h1>Gano {winnerName}</h1>
+      <div className="imgWinner" id={winnerName}></div>
       <button className="start-btn" onClick={restartGame}>
         Jugar otra vez
       </button>

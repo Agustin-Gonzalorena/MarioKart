@@ -13,3 +13,25 @@
   align-items: center;
   z-index: -1;
 }
+.imgWinner {
+  height: 200px;
+  width: 150px;
+  background-size: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#Mario {
+  background-image: url(../../../public/marioWin.png);
+}
+#Luigi {
+  background-image: url(../../../public/luigiWin.png);
+}
+#Bowser {
+  background-image: url(../../../public/bowserWin.png);
+}
+#Peach {
+  background-image: url(../../../public/winPeach.png);
+}
+#Toad {
+  background-image: url(../../../public/toadWin.png);
+}
