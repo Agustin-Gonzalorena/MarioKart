@@ -1,0 +1,9 @@
+.count-container {
+  margin-top: 150px;
+  font-family: "marioBros";
+  color: #e52521;
+  font-size: 44px;
+}
+.count-container h1 {
+  text-shadow: 0 0 5px rgba(148, 148, 148, 0.7);
+}

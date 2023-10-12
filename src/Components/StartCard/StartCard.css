@@ -1,0 +1,89 @@
+.card {
+  height: auto;
+  min-height: 400px;
+  width: 300px;
+  background-color: white;
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9;
+}
+.card h1 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: xx-large;
+}
+.team-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+.team-card {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  transition: all 0.2s ease;
+}
+.team-card img {
+  height: 50px;
+  width: auto;
+}
+.team-card h3 {
+  margin: 0;
+  padding: 0;
+  font-size: small;
+}
+.team-card.active {
+  box-shadow: 0 0 8px red;
+}
+.team-card:active {
+  transform: scale(0.9);
+}
+.bet-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+.bet-container img {
+  height: 20px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+.bet-buttons {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+.start-btn {
+  border: none;
+  background-color: red;
+  padding: 15px 45px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 5px 5px 0 0 rgba(255, 0, 0, 0.4);
+  font-size: x-large;
+  transition: all 0.5s ease;
+}
+.start-btn:hover {
+  box-shadow: none;
+  transform: translateX(5px) translateY(5px);
+  cursor: pointer;
+}
+.start-btn:active {
+  scale: 0.9;
+}

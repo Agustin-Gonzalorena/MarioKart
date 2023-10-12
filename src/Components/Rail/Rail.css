@@ -1,0 +1,19 @@
+.road-container {
+  position: relative;
+}
+.road {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(41, 41, 41);
+  position: absolute;
+  top: -100px;
+  margin-top: 30px;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 70px 3px;
+  background-repeat: repeat-x;
+}

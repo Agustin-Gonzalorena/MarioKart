@@ -1,0 +1,212 @@
+:root {
+  --transition-duration: 10s;
+}
+
+.character-box {
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 2;
+}
+.character-box.open {
+  transition: all var(--transition-duration) linear;
+  transform: translateX(calc(100vw));
+}
+
+.wheel {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.wheel.open {
+  animation: spin 0.3s linear infinite;
+}
+.reflex {
+  border-radius: 50%;
+  border: 2px solid rgb(0, 0, 0);
+  border-left: 2px solid white;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.character {
+  height: 100px;
+  width: auto;
+  animation: run 0.5s linear infinite;
+}
+@keyframes run {
+  0% {
+    transform: translateY(-2px);
+  }
+  25% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+.speed-lines {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+  top: 50px;
+  left: -50px;
+  opacity: 0;
+}
+.speed-lines.open {
+  opacity: 1;
+}
+.line1,
+.line2,
+.line3 {
+  width: 20px;
+  height: 1px;
+  background-color: #ffffff;
+}
+.line1 {
+  animation: line 0.5s linear infinite;
+}
+.line2 {
+  animation: line 0.8s linear infinite;
+}
+.line3 {
+  animation: line 0.3s linear infinite;
+}
+@keyframes line {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+/* ----Mario---- */
+#rightMario {
+  width: 16px;
+  height: 16px;
+  top: -51px;
+  right: -16.5px;
+}
+#rightMario .reflex {
+  width: 10px;
+  height: 10px;
+}
+#leftMario {
+  width: 21px;
+  height: 21px;
+  top: -35px;
+  left: -25px;
+}
+#leftMario .reflex {
+  width: 15px;
+  height: 15px;
+}
+
+/* ----Luigi---- */
+#rightLuigi {
+  width: 16px;
+  height: 16px;
+  top: -46px;
+  right: -16.5px;
+}
+#rightLuigi .reflex {
+  width: 10px;
+  height: 10px;
+}
+#leftLuigi {
+  width: 21px;
+  height: 21px;
+  top: -30px;
+  left: -24px;
+}
+#leftLuigi .reflex {
+  width: 15px;
+  height: 15px;
+}
+/* ---- Peach ---- */
+#rightPeach {
+  width: 30px;
+  height: 30px;
+  top: -57px;
+  right: -30px;
+}
+#rightPeach .reflex {
+  width: 20px;
+  height: 20px;
+}
+#leftPeach {
+  width: 28px;
+  height: 28px;
+  top: -27px;
+  left: -31px;
+}
+#leftPeach .reflex {
+  width: 20px;
+  height: 20px;
+}
+/* ----Bowser---- */
+#rightBowser {
+  width: 16px;
+  height: 16px;
+  top: -46px;
+  right: -16.5px;
+}
+#rightBowser .reflex {
+  width: 10px;
+  height: 10px;
+}
+#leftBowser {
+  width: 21px;
+  height: 21px;
+  top: -30px;
+  left: -24px;
+}
+#leftBowser .reflex {
+  width: 15px;
+  height: 15px;
+}
+/* ----Toad---- */
+#rightToad {
+  width: 16px;
+  height: 16px;
+  top: -51px;
+  right: -16.5px;
+}
+#rightToad .reflex {
+  width: 10px;
+  height: 10px;
+}
+#leftToad {
+  width: 21px;
+  height: 21px;
+  top: -35px;
+  left: -25px;
+}
+#leftToad .reflex {
+  width: 15px;
+  height: 15px;
+}
