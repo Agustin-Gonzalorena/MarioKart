@@ -1,5 +1,6 @@
 import "./App.css";
-import { useEffect, useState, max } from "react";
+import { useEffect, useState } from "react";
+import confetti from "https://cdn.skypack.dev/canvas-confetti";
 import Rail from "./Components/Rail/Rail";
 import Character from "./Components/Character/Character";
 import StartCard from "./Components/StartCard/StartCard";
@@ -7,6 +8,7 @@ import WinnerCard from "./Components/WinnerCard/WinnerCard";
 import coinImg from "./assets/img/coin.png";
 import { charactersApi } from "./utils/charactersApi";
 import Countdown from "./Components/Countdown/Countdown";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [start, setStart] = useState(true);
@@ -18,6 +20,7 @@ function App() {
 
   const startGame = () => {
     setStart(false);
+    random();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -29,22 +32,20 @@ function App() {
     setTimeout(() => {
       setInGame(false);
       setFinish(true);
+      confetti();
     }, 4000);
   };
   const restartGame = () => {
     setFinish(false);
     setTimes([]);
     setStart(true);
-    setTimeout(() => {
-      random();
-    }, 500);
   };
   const random = () => {
     setTimes([
+      Math.random(4 - 2.4) + 2.4,
       Math.random(4 - 2.5) + 2.5,
       Math.random(4 - 2.5) + 2.5,
-      Math.random(4 - 2.5) + 2.5,
-      Math.random(4 - 2.5) + 2.5,
+      Math.random(4 - 2.8) + 2.5,
       Math.random(4 - 2.5) + 2.5,
     ]);
   };
@@ -65,14 +66,6 @@ function App() {
         {/* <img src={coinImg} />
         <h1>{coins}</h1> */}
       </header>
-      {/* <section className={loser ? "menu-container open" : "menu-container"}>
-        <div
-          style={{ height: "300px", width: "200px", backgroundColor: "white" }}
-        >
-          <h1>Perdiste</h1>
-          <button onClick={cleanAll}>Reiniciar</button>
-        </div>
-      </section> */}
       <section className={loading ? "menu-container open" : "menu-container"}>
         <Countdown loading={loading} inGame={inGame} />
       </section>
@@ -102,18 +95,10 @@ function App() {
         <div className="downBush"></div>
         <div className="goal"></div>
       </article>
-      <footer>
-        <a
-          href="https://portfolio-agustin-gonzalorena.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p>© 2023 Desarrolado por Agustin Gonzalorena</p>
-        </a>
-        <p></p>
-      </footer>
+      <Footer />
       <div className="msj">
-        <h1>Solo para mobile</h1>
+        <h1>Only mobile</h1>
+        <p>desktop coming soon...</p>
       </div>
     </>
   );

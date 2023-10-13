@@ -38,9 +38,11 @@ header img {
   padding-top: 50px;
   z-index: -1;
   transition: all 0.5s ease;
+  opacity: 0;
 }
 .menu-container.open {
   z-index: 9;
+  opacity: 1;
 }
 .count-regresive {
   position: absolute;
@@ -91,18 +93,7 @@ header img {
   background-size: cover;
   z-index: 2;
 }
-footer {
-  height: 150px;
-  background-color: #dd5919;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 300px;
-}
-footer a {
-  text-decoration: none;
-  color: black;
-}
+
 .msj {
   display: none;
 }
@@ -110,6 +101,7 @@ footer a {
   .msj {
     display: flex;
     color: white;
+    flex-direction: column;
   }
   header,
   .menu-container,

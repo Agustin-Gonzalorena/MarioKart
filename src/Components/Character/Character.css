@@ -86,12 +86,15 @@
 }
 .line1 {
   animation: line 0.5s linear infinite;
+  background-color: rgb(131, 128, 128);
 }
 .line2 {
   animation: line 0.8s linear infinite;
+  background-color: rgb(105, 105, 105);
 }
 .line3 {
   animation: line 0.3s linear infinite;
+  background-color: rgb(214, 211, 211);
 }
 @keyframes line {
   0% {

@@ -9,15 +9,11 @@ const Character = ({
   wheelRight,
   time,
 }) => {
-  const [speed, setSpeed] = useState(0);
+  const [speed, setSpeed] = useState(null);
 
   useEffect(() => {
-    if (inGame) {
-      setSpeed(time);
-    } else {
-      setSpeed(0);
-    }
-  }, [inGame]);
+    setSpeed(time);
+  }, [time]);
   return (
     <article
       className={inGame ? "character-box open" : "character-box"}
