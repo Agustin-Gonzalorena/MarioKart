@@ -11,7 +11,7 @@ const Footer = () => {
         rel="noopener noreferrer"
       >
         <img
-          src="../../../public/MyLogoAG.svg"
+          src="./public/MyLogoAG.svg"
           alt=""
           style={{ height: "30px" }}
         />
