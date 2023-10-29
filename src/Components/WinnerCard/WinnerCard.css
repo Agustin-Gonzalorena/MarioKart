@@ -26,17 +26,17 @@
   background-repeat: no-repeat;
 }
 #Mario {
-  background-image: url(../../../public/MarioWin.png);
+  background-image: url(../../assets/img/win/MarioWin.png);
 }
 #Luigi {
-  background-image: url(../../../public/LuigiWin.png);
+  background-image: url(../../assets/img/win/LuigiWin.png);
 }
 #Bowser {
-  background-image: url(../../../public/BowserWin.png);
+  background-image: url(../../assets/img/win/BowserWin.png);
 }
 #Peach {
-  background-image: url(../../../public/PeachWin.png);
+  background-image: url(../../assets/img/win/PeachWin.png);
 }
 #Toad {
-  background-image: url(../../../public/ToadWin.png);
+  background-image: url(../../assets/img/win/ToadWin.png);
 }

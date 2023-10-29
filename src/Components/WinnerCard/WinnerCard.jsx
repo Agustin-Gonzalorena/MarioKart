@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./WinnerCard.css";
 
-const WinnerCard = ({ restartGame, winner }) => {
+const WinnerCard = ({ restartGame, playAgain, winner, coins }) => {
   const [winnerName, setWinnerName] = useState("Mariooo");
 
   useEffect(() => {
@@ -22,15 +22,20 @@ const WinnerCard = ({ restartGame, winner }) => {
 
   return (
     <article className="cardWinner">
+      {coins === 0 ? (
+        <h1 style={{ color: "red", margin: "0" }}>Game Over</h1>
+      ) : null}
       <h1>{winnerName} win!</h1>
       <div className="imgWinner" id={winnerName}></div>
+
       <button
         className="start-btn"
         onClick={() => {
-          restartGame();
+          if (coins === 0) restartGame();
+          else playAgain();
         }}
       >
-        Play again
+        {coins === 0 ? "Restart" : "Play Again"}
       </button>
     </article>
   );

@@ -1,14 +1,16 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import confetti from "https://cdn.skypack.dev/canvas-confetti";
-import Rail from "./Components/Rail/Rail";
-import Character from "./Components/Character/Character";
-import StartCard from "./Components/StartCard/StartCard";
-import WinnerCard from "./Components/WinnerCard/WinnerCard";
 import coinImg from "./assets/img/coin.png";
 import { charactersApi } from "./utils/charactersApi";
-import Countdown from "./Components/Countdown/Countdown";
-import Footer from "./Components/Footer/Footer";
+import {
+  Character,
+  Countdown,
+  Footer,
+  Rail,
+  StartCard,
+  WinnerCard,
+} from "./Components/index.js";
 
 function App() {
   const [start, setStart] = useState(true);
@@ -16,9 +18,15 @@ function App() {
   const [inGame, setInGame] = useState(false);
   const [finish, setFinish] = useState(false);
   const [winner, setWinner] = useState(null);
+  const [character, setCharacter] = useState(null);
   const [times, setTimes] = useState([]);
+  const [coins, setCoins] = useState(500);
+  const [bet, setBet] = useState(null);
 
-  const startGame = () => {
+  const startGame = (_bet, character) => {
+    setCoins(coins - _bet);
+    setBet(_bet);
+    setCharacter(character);
     setStart(false);
     random();
     setLoading(true);
@@ -35,11 +43,7 @@ function App() {
       confetti();
     }, 4000);
   };
-  const restartGame = () => {
-    setFinish(false);
-    setTimes([]);
-    setStart(true);
-  };
+
   const random = () => {
     setTimes([
       Math.random(4 - 2.4) + 2.4,
@@ -54,26 +58,53 @@ function App() {
     let index = times.indexOf(min);
     setWinner(index);
   };
+  const playAgain = () => {
+    setFinish(false);
+    setTimes([]);
+    setStart(true);
+  };
+  const restartGame = () => {
+    setBet(0);
+    setCharacter(null);
+    setFinish(false);
+    setTimes([]);
+    setCoins(500);
+    setStart(true);
+  };
   useEffect(() => {
     checkWinner();
   }, [times]);
   useEffect(() => {
     random();
   }, []);
+  useEffect(() => {
+    if (finish) {
+      if (winner == character) {
+        setCoins(coins + bet * 2);
+      } else {
+        setCoins(coins);
+      }
+    }
+  }, [finish]);
   return (
     <>
       <header>
-        {/* <img src={coinImg} />
-        <h1>{coins}</h1> */}
+        <img src={coinImg} />
+        <h1>{coins}</h1>
       </header>
       <section className={loading ? "menu-container open" : "menu-container"}>
         <Countdown loading={loading} inGame={inGame} />
       </section>
       <section className={start ? "menu-container open" : "menu-container"}>
-        <StartCard startGame={startGame} />
+        <StartCard startGame={startGame} coins={coins} />
       </section>
       <section className={finish ? "menu-container open" : "menu-container"}>
-        <WinnerCard restartGame={restartGame} winner={winner} />
+        <WinnerCard
+          restartGame={restartGame}
+          playAgain={playAgain}
+          winner={winner}
+          coins={coins}
+        />
       </section>
 
       <article className="race-container">
@@ -96,10 +127,6 @@ function App() {
         <div className="goal"></div>
       </article>
       <Footer />
-      <div className="msj">
-        <h1>Only mobile</h1>
-        <p>desktop coming soon...</p>
-      </div>
     </>
   );
 }

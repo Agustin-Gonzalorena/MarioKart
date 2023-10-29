@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  color: white;
   z-index: 9;
 }
 .card h1 {
@@ -33,7 +34,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   transition: all 0.2s ease;
 }
 .team-card img {
@@ -56,7 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
 .bet-container img {
@@ -68,6 +69,15 @@
   width: 70%;
   display: flex;
   justify-content: space-around;
+}
+.bet-buttons button {
+  border: none;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.bet-buttons button:active {
+  transform: scale(0.9);
 }
 .start-btn {
   border: none;

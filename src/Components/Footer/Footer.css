@@ -5,8 +5,28 @@ footer {
   justify-content: center;
   align-items: center;
   min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 footer a {
   text-decoration: none;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+footer p {
+  text-align: center;
+}
+.warningMobile {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .warningMobile {
+    display: flex;
+    color: white;
+    font-weight: 800;
+  }
 }

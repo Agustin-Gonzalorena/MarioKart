@@ -94,19 +94,14 @@ header img {
   z-index: 2;
 }
 
-.msj {
-  display: none;
-}
 @media screen and (min-width: 768px) {
-  .msj {
-    display: flex;
-    color: white;
-    flex-direction: column;
+  .topBush {
+    background-size: 30%;
   }
-  header,
-  .menu-container,
-  .race-container,
-  footer {
-    display: none;
+  .downBush {
+    background-size: 30%;
+  }
+  header {
+    background-size: 10% 100%;
   }
 }

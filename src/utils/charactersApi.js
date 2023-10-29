@@ -1,8 +1,8 @@
-import marioImg from "../assets/img/marioKart.png";
-import luigiImg from "../assets/img/luigiKart.png";
-import peachImg from "../assets/img/peachKart.png";
-import bowsersImg from "../assets/img/bowserKart.png";
-import toadImg from "../assets/img/toadKart.png";
+import marioImg from "../assets/img/karts/marioKart.png";
+import luigiImg from "../assets/img/karts/luigiKart.png";
+import peachImg from "../assets/img/karts/peachKart.png";
+import bowsersImg from "../assets/img/karts/bowserKart.png";
+import toadImg from "../assets/img/karts/toadKart.png";
 
 export const charactersApi = [
   {

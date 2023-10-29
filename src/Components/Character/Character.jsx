@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Character.css";
 
-const Character = ({
-  character,
-  inGame,
-  characterImg,
-  wheelLeft,
-  wheelRight,
-  time,
-}) => {
+const Character = ({ inGame, characterImg, wheelLeft, wheelRight, time }) => {
   const [speed, setSpeed] = useState(null);
 
   useEffect(() => {

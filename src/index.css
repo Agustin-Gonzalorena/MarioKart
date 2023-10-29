@@ -1,10 +1,10 @@
 @font-face {
   font-family: "marioBros";
-  src: url(../public/SuperMario256.ttf);
+  src: url(./assets/fonts/SuperMario256.ttf);
 }
 @font-face {
   font-family: "Roboto";
-  src: url(../public/Roboto-Regular.ttf);
+  src: url(./assets/fonts/Roboto-Regular.ttf);
 }
 :root {
   font-family: "Roboto";
