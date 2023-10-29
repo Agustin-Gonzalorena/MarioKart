@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import logo from "../../../public/MyLogoAG.svg";
 const Footer = () => {
   return (
     <footer>
@@ -10,11 +11,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img
-          src="./public/MyLogoAG.svg"
-          alt=""
-          style={{ height: "30px" }}
-        />
+        <img src={logo} alt="" style={{ height: "30px" }} />
         <strong>Agustín Gonzalorena</strong>
       </a>
     </footer>
