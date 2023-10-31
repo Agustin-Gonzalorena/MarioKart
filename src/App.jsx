@@ -37,22 +37,30 @@ function App() {
     }, 3000);
   };
   const finishGame = () => {
-    setTimeout(() => {
-      setInGame(false);
-      setFinish(true);
-      confetti();
-    }, 4000);
+    setTimeout(
+      () => {
+        setInGame(false);
+        setFinish(true);
+        confetti();
+      },
+      window.innerWidth > 768 ? 6000 : 4000
+    );
   };
 
   const random = () => {
+    let seg = [];
+    if (window.innerWidth > 768) {
+      seg = [6, 4.5];
+    } else seg = [4, 2.5];
     setTimes([
-      Math.random(4 - 2.4) + 2.4,
-      Math.random(4 - 2.5) + 2.5,
-      Math.random(4 - 2.5) + 2.5,
-      Math.random(4 - 2.8) + 2.5,
-      Math.random(4 - 2.5) + 2.5,
+      Math.random(seg[0] - seg[1]) + seg[1],
+      Math.random(seg[0] - seg[1]) + seg[1],
+      Math.random(seg[0] - seg[1]) + seg[1],
+      Math.random(seg[0] - seg[1]) + seg[1],
+      Math.random(seg[0] - seg[1]) + seg[1],
     ]);
   };
+
   const checkWinner = () => {
     let min = Math.min(...times);
     let index = times.indexOf(min);
